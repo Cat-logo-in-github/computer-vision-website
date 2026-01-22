@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/computer-vision-website',
-  images: {
-    unoptimized: true,
-  },
+  basePath: process.env.NODE_ENV === 'production' ? '/computer-vision-website' : '',
+  images: { unoptimized: true },
 };
 
 module.exports = nextConfig;
